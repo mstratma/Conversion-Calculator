@@ -1,0 +1,94 @@
+<!doctype html>
+<title>Conversion calculators</title>
+
+<style>
+body {
+  font-family: sans-serif;
+  background-color: lightblue;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+input {
+  width: 100px;
+}
+
+label {
+  cursor: pointer;
+  display: block;
+  text-align: right;
+  width: 200px;
+  margin-bottom: 5px;
+}
+</style>
+
+<h1>Conversion Calculators</h1>
+
+<h2>Weight:</h2>
+<label>Pounds <input id="poundsInput"></label>
+<label>Ounces <input id='ouncesInput'></label>
+<label>Kilograms <input id="kilogramsInput"></label>
+<label>Grams <input id='gramsInput'></label>
+
+<h2>Temperature:</h2>
+<label>Celcius <input id='cInput'></label>
+<label>Fahrenheit <input id='fInput'></label>
+<label>Kelvin <input id='kInput'></label>
+
+<script>
+
+//Weight functions
+function updateFromOunces() {
+  poundsInput.value = (ouncesInput.value / 16).toFixed(2);
+  kilogramsInput.value = (poundsInput.value / 2.20462).toFixed(2);
+  gramsInput.value = ((poundsInput.value / 2.20462) * 1000).toFixed(2);
+}
+
+function updateFromGrams() {
+  poundsInput.value = ((gramsInput.value / 1000)* 2.20462).toFixed(2);
+  kilogramsInput.value = (gramsInput.value / 1000).toFixed(2);
+  ouncesInput.value = (poundsInput.value * 16).toFixed(2);
+};
+
+function updateFromKilograms() {
+  poundsInput.value = (kilogramsInput.value * 2.20462).toFixed(2);
+  gramsInput.value = (kilogramsInput.value * 1000).toFixed(2);
+  ouncesInput.value = (poundsInput.value * 16).toFixed(2);
+};
+
+function updateFromPounds() {
+  kilogramsInput.value = (poundsInput.value / 2.20462).toFixed(2);
+  gramsInput.value = ((poundsInput.value / 2.20462) * 1000).toFixed(2);
+  ouncesInput.value = (poundsInput.value * 16).toFixed(2);
+};
+
+ouncesInput.oninput = updateFromOunces;
+gramsInput.oninput = updateFromGrams;
+poundsInput.oninput = updateFromPounds;
+kilogramsInput.oninput = updateFromKilograms;
+//End weight functions
+
+//Temperature functions. (/1 after cInput converts to number. .toFixed makes output a string.)
+function updateFromC() {
+  fInput.value = (cInput.value * 1.8 + 32).toFixed(2);
+  kInput.value = (cInput.value / 1 + 273.15);
+}
+
+function updateFromF() {
+  cInput.value = ((fInput.value - 32) / 1.8).toFixed(2);
+  kInput.value = (cInput.value / 1 + 273.15);
+}
+
+function updateFromK() {
+  cInput.value = (kInput.value - 273.15).toFixed(2);
+  fInput.value = (cInput.value * 1.8 + 32).toFixed(2);
+}
+
+cInput.oninput = updateFromC;
+fInput.oninput = updateFromF;
+kInput.oninput = updateFromK;
+//End Temperature functions
+
+</script>
