@@ -19,7 +19,7 @@ label {
   cursor: pointer;
   display: block;
   text-align: right;
-  width: 200px;
+  width: 220px;
   margin-bottom: 5px;
 }
 </style>
@@ -37,7 +37,72 @@ label {
 <label>Fahrenheit <input id='fInput'></label>
 <label>Kelvin <input id='kInput'></label>
 
+<h2>Velocity: </h2>
+<label>Feet/Second <input id='footSInput'></label>
+<label>Mile/Hour <input id='mileHInput'></label>
+<label>Mile/Second <input id='mileSInput'></label>
+<label>Km/Hour <input id='kilometerHInput'></label>
+<label>Km/Second <input id='kilometerSInput'></label>
+<label>Meter/Second <input id='meterSInput'></label>
+
 <script>
+
+//Velocity functions
+function updateFromFeetS () {
+  mileHInput.value = (footSInput.value / 1.46666667).toFixed(2)/1;
+  mileSInput.value = (mileHInput.value / 3600).toFixed(3)/1;
+  kilometerHInput.value = ((mileSInput.value * 3600) * 1.60934).toFixed(2)/1;
+  kilometerSInput.value = (kilometerHInput.value / 3600).toFixed(3)/1;
+  meterSInput.value = (kilometerSInput.value * 1000).toFixed(2)/1;
+}
+
+function updateFromMileH () {
+  footSInput.value = (mileHInput.value * 1.46666667).toFixed(2)/1;
+  mileSInput.value = (mileHInput.value / 3600).toFixed(3)/1;
+  kilometerHInput.value = ((mileSInput.value * 3600) * 1.60934).toFixed(2)/1;
+  kilometerSInput.value = (kilometerHInput.value / 3600).toFixed(3)/1;
+  meterSInput.value = (kilometerSInput.value * 1000).toFixed(2)/1;
+}
+
+function updateFromMileS () {
+  footSInput.value = ((mileSInput.value * 3600) * 1.46666667).toFixed(2)/1;
+  mileHInput.value = (footSInput.value / 1.46666667).toFixed(2)/1;
+  kilometerHInput.value = ((mileSInput.value * 3600) * 1.60934).toFixed(2)/1;
+  kilometerSInput.value = (kilometerHInput.value / 3600).toFixed(3)/1;
+  meterSInput.value = (kilometerSInput.value * 1000).toFixed(2)/1;
+}
+
+function updateFromKilometerH () {
+  footSInput.value = (kilometerHInput.value * .9113444154).toFixed(2)/1;
+  mileHInput.value = (footSInput.value / 1.46666667).toFixed(2)/1;
+  mileSInput.value = (mileHInput.value / 3600).toFixed(3)/1;
+  kilometerSInput.value = (kilometerHInput.value / 3600).toFixed(3)/1;
+  meterSInput.value = (kilometerSInput.value * 1000).toFixed(2)/1;
+}
+
+function updateFromKilometerS () {
+  footSInput.value = ((kilometerSInput.value * 3600) * .9113444154).toFixed(2)/1;
+  mileHInput.value = (footSInput.value / 1.46666667).toFixed(2)/1;
+  mileSInput.value = (mileHInput.value / 3600).toFixed(3)/1;
+  kilometerHInput.value = ((mileSInput.value * 3600) * 1.60934).toFixed(2)/1;
+  meterSInput.value = (kilometerSInput.value * 1000).toFixed(2)/1;
+}
+
+function updateFromMeterS () {
+  footSInput.value = (meterSInput.value * 3.2808399).toFixed(2)/1;
+  mileHInput.value = (footSInput.value / 1.46666667).toFixed(2)/1;
+  mileSInput.value = (mileHInput.value / 3600).toFixed(3)/1;
+  kilometerHInput.value = ((mileSInput.value * 3600) * 1.60934).toFixed(2)/1;
+  kilometerSInput.value = (kilometerHInput.value / 3600).toFixed(3)/1;
+}
+
+footSInput.oninput = updateFromFeetS;
+mileHInput.oninput = updateFromMileH;
+mileSInput.oninput = updateFromMileS;
+kilometerHInput.oninput = updateFromKilometerH;
+kilometerSInput.oninput = updateFromKilometerS;
+meterSInput.oninput = updateFromMeterS;
+//End Velocity functions
 
 //Weight functions
 function updateFromOunces() {
