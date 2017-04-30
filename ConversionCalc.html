@@ -49,51 +49,51 @@ label {
 
 //Velocity functions
 function updateFromFeetS () {
-  mileHInput.value = (footSInput.value / 1.46666667).toFixed(2)/1;
-  mileSInput.value = (mileHInput.value / 3600).toFixed(3)/1;
-  kilometerHInput.value = ((mileSInput.value * 3600) * 1.60934).toFixed(2)/1;
-  kilometerSInput.value = (kilometerHInput.value / 3600).toFixed(3)/1;
-  meterSInput.value = (kilometerSInput.value * 1000).toFixed(2)/1;
+  mileHInput.value = (footSInput.value * 0.681818).toFixed(2);
+  mileSInput.value = (footSInput.value * 0.0001893939394).toFixed(2);
+  kilometerHInput.value = (footSInput.value * 1.09728).toFixed(2);
+  kilometerSInput.value = (footSInput.value * 0.0003048).toFixed(2);
+  meterSInput.value = (footSInput.value * 0.3048).toFixed(2);
 }
 
 function updateFromMileH () {
-  footSInput.value = (mileHInput.value * 1.46666667).toFixed(2)/1;
-  mileSInput.value = (mileHInput.value / 3600).toFixed(3)/1;
-  kilometerHInput.value = ((mileSInput.value * 3600) * 1.60934).toFixed(2)/1;
-  kilometerSInput.value = (kilometerHInput.value / 3600).toFixed(3)/1;
-  meterSInput.value = (kilometerSInput.value * 1000).toFixed(2)/1;
+  footSInput.value = (mileHInput.value * 1.46666667).toFixed(2);
+  mileSInput.value = (mileHInput.value * 0.0002777777778).toFixed(2);
+  kilometerHInput.value = (mileHInput.value * 1.609344).toFixed(2);
+  kilometerSInput.value = (mileHInput.value * 0.00044704).toFixed(2);
+  meterSInput.value = (mileHInput.value * 0.44704).toFixed(2);
 }
 
 function updateFromMileS () {
-  footSInput.value = ((mileSInput.value * 3600) * 1.46666667).toFixed(2)/1;
-  mileHInput.value = (footSInput.value / 1.46666667).toFixed(2)/1;
-  kilometerHInput.value = ((mileSInput.value * 3600) * 1.60934).toFixed(2)/1;
-  kilometerSInput.value = (kilometerHInput.value / 3600).toFixed(3)/1;
-  meterSInput.value = (kilometerSInput.value * 1000).toFixed(2)/1;
+  footSInput.value = (mileSInput.value * 5280).toFixed(2);
+  mileHInput.value = (mileSInput.value * 3600).toFixed(2);
+  kilometerHInput.value = (mileSInput.value * 5793.6384).toFixed(2);
+  kilometerSInput.value = (mileSInput.value * 1.609344).toFixed(2);
+  meterSInput.value = (mileSInput.value * 1609.344).toFixed(2);
 }
 
 function updateFromKilometerH () {
-  footSInput.value = (kilometerHInput.value * .9113444154).toFixed(2)/1;
-  mileHInput.value = (footSInput.value / 1.46666667).toFixed(2)/1;
-  mileSInput.value = (mileHInput.value / 3600).toFixed(3)/1;
-  kilometerSInput.value = (kilometerHInput.value / 3600).toFixed(3)/1;
-  meterSInput.value = (kilometerSInput.value * 1000).toFixed(2)/1;
+  footSInput.value = (kilometerHInput.value * 0.91134442).toFixed(2);
+  mileHInput.value = (kilometerHInput.value * 0.6213711923).toFixed(2);
+  mileSInput.value = (kilometerHInput.value * 0.000172603109).toFixed(2);
+  kilometerSInput.value = (kilometerHInput.value * 0.0002777777778).toFixed(2);
+  meterSInput.value = (kilometerHInput.value * 0.2777777778).toFixed(2);
 }
 
 function updateFromKilometerS () {
-  footSInput.value = ((kilometerSInput.value * 3600) * .9113444154).toFixed(2)/1;
-  mileHInput.value = (footSInput.value / 1.46666667).toFixed(2)/1;
-  mileSInput.value = (mileHInput.value / 3600).toFixed(3)/1;
-  kilometerHInput.value = ((mileSInput.value * 3600) * 1.60934).toFixed(2)/1;
-  meterSInput.value = (kilometerSInput.value * 1000).toFixed(2)/1;
+  footSInput.value = (kilometerSInput.value * 3280.839895).toFixed(2);
+  mileHInput.value = (kilometerSInput.value * 2236.936292).toFixed(2);
+  mileSInput.value = (kilometerSInput.value * 0.6213711922).toFixed(2);
+  kilometerHInput.value = (kilometerSInput.value * 3600).toFixed(2);
+  meterSInput.value = (kilometerSInput.value * 1000).toFixed(2);
 }
 
 function updateFromMeterS () {
-  footSInput.value = (meterSInput.value * 3.2808399).toFixed(2)/1;
-  mileHInput.value = (footSInput.value / 1.46666667).toFixed(2)/1;
-  mileSInput.value = (mileHInput.value / 3600).toFixed(3)/1;
-  kilometerHInput.value = ((mileSInput.value * 3600) * 1.60934).toFixed(2)/1;
-  kilometerSInput.value = (kilometerHInput.value / 3600).toFixed(3)/1;
+  footSInput.value = (meterSInput.value * 3.280839895).toFixed(2);
+  mileHInput.value = (meterSInput.value * 2.236936292).toFixed(2);
+  mileSInput.value = (meterSInput.value * 0.0006213711922).toFixed(2);
+  kilometerHInput.value = (meterSInput.value * 3.6).toFixed(2);
+  kilometerSInput.value = (meterSInput.value * .001).toFixed(2);
 }
 
 footSInput.oninput = updateFromFeetS;
