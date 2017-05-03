@@ -45,7 +45,15 @@ label {
 <label>Km/Second <input id='kilometerSInput'></label>
 <label>Meter/Second <input id='meterSInput'></label>
 
-<h2>Distance:</h2>
+<h2>Distance/Length:</h2>
+<label>Inch <input id='inchInput'></label>
+<label>Foot <input id='footInput'></label>
+<label>Yard <input id='yardInput'></label>
+<label>Mile <input id='mileInput'></label>
+<label>Millimeter <input id='millimeterInput'></label>
+<label>Centimeter <input id='centimeterInput'></label>
+<label>Meter <input id='meterInput'></label>
+<label>Kilometer <input id='kilometerInput'></label>
 
 <h2>Volume:</h2>
 <label>Tsp <input id='tSPInput'></label>
@@ -99,7 +107,7 @@ function updateFromC() {
 
 function updateFromF() {
   cInput.value = ((fInput.value - 32) / 1.8).toFixed(2);
-  kInput.value = (cInput.value / 1 + 273.15);
+  kInput.value = (cInput.value / 1 + 273.15).toFixed(2);
 }
 
 function updateFromK() {
@@ -279,4 +287,5 @@ gallonInput.oninput = updateFromGallon;
 milliliterInput.oninput = updateFromMilliliter;
 literInput.oninput = updateFromLiter;
 //End volume functions
+
 </script>
