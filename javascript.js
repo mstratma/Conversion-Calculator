@@ -245,3 +245,103 @@ gallon.oninput = updateFromGallon;
 milliliter.oninput = updateFromMilliliter;
 liter.oninput = updateFromLiter;
 //End volume functions
+
+//Distance and length functions
+var inch = document.getElementById('inchInput');
+var foot = document.getElementById('footInput');
+var yard = document.getElementById('yardInput');
+var mile = document.getElementById('mileInput');
+var millimeter = document.getElementById('millimeterInput');
+var centimeter = document.getElementById('centimeterInput');
+var meter = document.getElementById('meterInput');
+var kilometer = document.getElementById('kilometerInput');
+
+function updateFromInch () {
+  foot.value = (inch.value * 0.08333333333).toFixed(2);
+  yard.value = (inch.value * 0.02777777778).toFixed(2);
+  mile.value = (inch.value * 0.00001578282828).toFixed(2);
+  millimeter.value = (inch.value * 25.4).toFixed(2);
+  centimeter.value = (inch.value * 2.54).toFixed(2);
+  meter.value = (inch.value * .0254).toFixed(2);
+  kilometer.value = (inch.value * .0000254).toFixed(2);
+}
+
+function updateFromFoot () {
+  inch.value = (foot.value * 12).toFixed(2);
+  yard.value = (foot.value * 0.333333333).toFixed(2);
+  mile.value = (foot.value * 0.0001893932).toFixed(2);
+  millimeter.value = (foot.value * 304.8).toFixed(2);
+  centimeter.value = (foot.value * 30.48).toFixed(2);
+  meter.value = (foot.value * 0.3048).toFixed(2);
+  kilometer.value = (foot.value * 0.0003048).toFixed(2);
+}
+
+function updateFromYard () {
+  inch.value = (yard.value * 36).toFixed(2);
+  foot.value = (yard.value * 3).toFixed(2);
+  mile.value = (yard.value * 0.0005681797).toFixed(2);
+  millimeter.value = (yard.value * 914.4).toFixed(2);
+  centimeter.value = (yard.value * 91.44).toFixed(2);
+  meter.value = (yard.value * 0.9144).toFixed(2);
+  kilometer.value = (yard.value * 0.0009144).toFixed(2);
+}
+
+function updateFromMile () {
+  inch.value = (mile.value * 63360).toFixed(2);
+  foot.value = (mile.value * 5280).toFixed(2);
+  yard.value = (mile.value * 1760).toFixed(2);
+  millimeter.value = (mile.value * 1609340).toFixed(2);
+  centimeter.value = (mile.value * 160934).toFixed(2);
+  meter.value = (mile.value * 1609.34).toFixed(2);
+  kilometer.value = (mile.value * 1.60934).toFixed(2);
+}
+
+function updateFromMillimeter () {
+  inch.value = (millimeter.value * 0.0393700787).toFixed(2);
+  foot.value = (millimeter.value * 0.0032808399).toFixed(2);
+  yard.value = (millimeter.value * 0.0010936133).toFixed(2);
+  mile.value = (millimeter.value * 0.0000006213688).toFixed(2);
+  centimeter.value = (millimeter.value * .1).toFixed(2);
+  meter.value = (millimeter.value * 0.001).toFixed(2);
+  kilometer.value = (millimeter.value * 0.000001).toFixed(2);
+}
+
+function updateFromCentimeter () {
+  inch.value = (centimeter.value * 0.3937007874).toFixed(2);
+  foot.value = (centimeter.value * 0.032808399).toFixed(2);
+  yard.value = (centimeter.value * 0.010936133).toFixed(2);
+  mile.value = (centimeter.value * 0.0000062137).toFixed(2);
+  millimeter.value = (centimeter.value * 10).toFixed(2);
+  meter.value = (centimeter.value * 0.01).toFixed(2);
+  kilometer.value = (centimeter.value * 0.00001).toFixed(2);
+}
+
+function updateFromMeter () {
+  inch.value = (meter.value * 39.37007874).toFixed(2);
+  foot.value = (meter.value * 3.280839895).toFixed(2);
+  yard.value = (meter.value * 1.093613298).toFixed(2);
+  mile.value = (meter.value * 0.0006213689).toFixed(2);
+  millimeter.value = (meter.value * 1000).toFixed(2);
+  centimeter.value = (meter.value * 100).toFixed(2);
+  kilometer.value = (meter.value * 0.001).toFixed(2);
+}
+
+function updateFromKilometer () {
+  inch.value = (kilometer.value * 39370.07874).toFixed(2);
+  foot.value = (kilometer.value * 3280.839895).toFixed(2);
+  yard.value = (kilometer.value * 1093.613298).toFixed(2);
+  mile.value = (kilometer.value * 0.6213688756).toFixed(2);
+  millimeter.value = (kilometer.value * 1000000).toFixed(2);
+  centimeter.value = (kilometer.value * 100000).toFixed(2);
+  meter.value = (kilometer.value * 1000).toFixed(2);
+}
+
+inch.oninput = updateFromInch;
+foot.oninput = updateFromFoot;
+yard.oninput = updateFromYard;
+mile.oninput = updateFromMile;
+millimeter.oninput = updateFromMillimeter;
+centimeter.oninput = updateFromCentimeter;
+meter.oninput = updateFromMeter;
+kilometer.oninput = updateFromKilometer;
+//End distance and length functions
