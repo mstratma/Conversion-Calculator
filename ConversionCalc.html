@@ -10,45 +10,66 @@
 <body>
   <h1>Conversion Calculators</h1>
 
-  <h2>Weight:</h2>
-  <label>Pounds <input id="poundsInput"></label>
-  <label>Ounces <input id='ouncesInput'></label>
-  <label>Kilograms <input id="kilogramsInput"></label>
-  <label>Grams <input id='gramsInput'></label>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Weight')">Weight</button>
+    <button class="tablinks" onclick="openCity(event, 'Temperature')">Temperature</button>
+    <button class="tablinks" onclick="openCity(event, 'Velocity')">Velocity</button>
+    <button class="tablinks" onclick="openCity(event, 'Distance/length')">Distance/length</button>
+    <button class="tablinks" onclick="openCity(event, 'Volume')">Volume</button>
+  </div>
 
-  <h2>Temperature:</h2>
-  <label>Celcius <input id='cInput'></label>
-  <label>Fahrenheit <input id='fInput'></label>
-  <label>Kelvin <input id='kInput'></label>
+  <div id="Weight" class="tabcontent">
+    <h3>Weight:</h3>
+    <label>Pounds <input id="poundsInput"></label>
+    <label>Ounces <input id='ouncesInput'></label>
+    <label>Kilograms <input id="kilogramsInput"></label>
+    <label>Grams <input id='gramsInput'></label>
+  </div>
 
-  <h2>Velocity: </h2>
-  <label>Feet/Second <input id='footSInput'></label>
-  <label>Mile/Hour <input id='mileHInput'></label>
-  <label>Mile/Second <input id='mileSInput'></label>
-  <label>Km/Hour <input id='kilometerHInput'></label>
-  <label>Km/Second <input id='kilometerSInput'></label>
-  <label>Meter/Second <input id='meterSInput'></label>
+  <div id="Temperature" class="tabcontent">
+    <h3>Temperature:</h3>
+    <label>Celcius <input id='cInput'></label>
+    <label>Fahrenheit <input id='fInput'></label>
+    <label>Kelvin <input id='kInput'></label>
+  </div>
 
-  <h2>Distance/Length:</h2>
-  <label>Inch <input id='inchInput'></label>
-  <label>Foot <input id='footInput'></label>
-  <label>Yard <input id='yardInput'></label>
-  <label>Mile <input id='mileInput'></label>
-  <label>Millimeter <input id='millimeterInput'></label>
-  <label>Centimeter <input id='centimeterInput'></label>
-  <label>Meter <input id='meterInput'></label>
-  <label>Kilometer <input id='kilometerInput'></label>
+  <div id="Velocity" class="tabcontent">
+    <h3>Velocity:</h3>
+    <label>Feet/Second <input id='footSInput'></label>
+    <label>Mile/Hour <input id='mileHInput'></label>
+    <label>Mile/Second <input id='mileSInput'></label>
+    <label>Km/Hour <input id='kilometerHInput'></label>
+    <label>Km/Second <input id='kilometerSInput'></label>
+    <label>Meter/Second <input id='meterSInput'></label>
+  </div>
 
-  <h2>Volume:</h2>
-  <label>Tsp <input id='tSPInput'></label>
-  <label>Tbsp <input id='tBSPInput'></label>
-  <label>Fluid Ounce <input id='fluidOInput'></label>
-  <label>Cup <input id='cupInput'></label>
-  <label>Pint <input id='pintInput'></label>
-  <label>Quart <input id='quartInput'></label>
-  <label>Gallon <input id='gallonInput'></label>
-  <label>Milliliter <input id='milliliterInput'></label>
-  <label>Liter <input id='literInput'></label>
+  <div id="Distance/length" class="tabcontent">
+    <h3>Distance/length:</h3>
+    <label>Inch <input id='inchInput'></label>
+    <label>Foot <input id='footInput'></label>
+    <label>Yard <input id='yardInput'></label>
+    <label>Mile <input id='mileInput'></label>
+    <label>Millimeter <input id='millimeterInput'></label>
+    <label>Centimeter <input id='centimeterInput'></label>
+    <label>Meter <input id='meterInput'></label>
+    <label>Kilometer <input id='kilometerInput'></label>
+  </div>
+
+  <div id="Volume" class="tabcontent">
+    <h3>Volume:</h3>
+    <label>Tsp <input id='tSPInput'></label>
+    <label>Tbsp <input id='tBSPInput'></label>
+    <label>Fluid Ounce <input id='fluidOInput'></label>
+    <label>Cup <input id='cupInput'></label>
+    <label>Pint <input id='pintInput'></label>
+    <label>Quart <input id='quartInput'></label>
+    <label>Gallon <input id='gallonInput'></label>
+    <label>Milliliter <input id='milliliterInput'></label>
+    <label>Liter <input id='literInput'></label>
+  </div>
+
+
+
 
   <script type="text/javascript" src="javascript.js"></script>
 </body>
