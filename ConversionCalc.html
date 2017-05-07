@@ -1,297 +1,55 @@
 <!doctype html>
-<title>Conversion calculators</title>
 
-<style>
-body {
-  font-family: sans-serif;
-  background-color: lightblue;
-}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Conversion Calculators</title>
+  <meta name="description" content="Conversion Calculator">
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  <h1>Conversion Calculators</h1>
 
-h1 {
-  font-size: 28px;
-}
+  <h2>Weight:</h2>
+  <label>Pounds <input id="poundsInput"></label>
+  <label>Ounces <input id='ouncesInput'></label>
+  <label>Kilograms <input id="kilogramsInput"></label>
+  <label>Grams <input id='gramsInput'></label>
 
-input {
-  width: 100px;
-}
+  <h2>Temperature:</h2>
+  <label>Celcius <input id='cInput'></label>
+  <label>Fahrenheit <input id='fInput'></label>
+  <label>Kelvin <input id='kInput'></label>
 
-label {
-  cursor: pointer;
-  display: block;
-  text-align: right;
-  width: 220px;
-  margin-bottom: 5px;
-}
-</style>
+  <h2>Velocity: </h2>
+  <label>Feet/Second <input id='footSInput'></label>
+  <label>Mile/Hour <input id='mileHInput'></label>
+  <label>Mile/Second <input id='mileSInput'></label>
+  <label>Km/Hour <input id='kilometerHInput'></label>
+  <label>Km/Second <input id='kilometerSInput'></label>
+  <label>Meter/Second <input id='meterSInput'></label>
 
-<h1>Conversion Calculators</h1>
+  <h2>Distance/Length:</h2>
+  <label>Inch <input id='inchInput'></label>
+  <label>Foot <input id='footInput'></label>
+  <label>Yard <input id='yardInput'></label>
+  <label>Mile <input id='mileInput'></label>
+  <label>Millimeter <input id='millimeterInput'></label>
+  <label>Centimeter <input id='centimeterInput'></label>
+  <label>Meter <input id='meterInput'></label>
+  <label>Kilometer <input id='kilometerInput'></label>
 
-<h2>Weight:</h2>
-<label>Pounds <input id="poundsInput"></label>
-<label>Ounces <input id='ouncesInput'></label>
-<label>Kilograms <input id="kilogramsInput"></label>
-<label>Grams <input id='gramsInput'></label>
+  <h2>Volume:</h2>
+  <label>Tsp <input id='tSPInput'></label>
+  <label>Tbsp <input id='tBSPInput'></label>
+  <label>Fluid Ounce <input id='fluidOInput'></label>
+  <label>Cup <input id='cupInput'></label>
+  <label>Pint <input id='pintInput'></label>
+  <label>Quart <input id='quartInput'></label>
+  <label>Gallon <input id='gallonInput'></label>
+  <label>Milliliter <input id='milliliterInput'></label>
+  <label>Liter <input id='literInput'></label>
 
-<h2>Temperature:</h2>
-<label>Celcius <input id='cInput'></label>
-<label>Fahrenheit <input id='fInput'></label>
-<label>Kelvin <input id='kInput'></label>
-
-<h2>Velocity: </h2>
-<label>Feet/Second <input id='footSInput'></label>
-<label>Mile/Hour <input id='mileHInput'></label>
-<label>Mile/Second <input id='mileSInput'></label>
-<label>Km/Hour <input id='kilometerHInput'></label>
-<label>Km/Second <input id='kilometerSInput'></label>
-<label>Meter/Second <input id='meterSInput'></label>
-
-<h2>Distance/Length:</h2>
-<label>Inch <input id='inchInput'></label>
-<label>Foot <input id='footInput'></label>
-<label>Yard <input id='yardInput'></label>
-<label>Mile <input id='mileInput'></label>
-<label>Millimeter <input id='millimeterInput'></label>
-<label>Centimeter <input id='centimeterInput'></label>
-<label>Meter <input id='meterInput'></label>
-<label>Kilometer <input id='kilometerInput'></label>
-
-<h2>Volume:</h2>
-<label>Tsp <input id='tSPInput'></label>
-<label>Tbsp <input id='tBSPInput'></label>
-<label>Fluid Ounce <input id='fluidOInput'></label>
-<label>Cup <input id='cupInput'></label>
-<label>Pint <input id='pintInput'></label>
-<label>Quart <input id='quartInput'></label>
-<label>Gallon <input id='gallonInput'></label>
-<label>Milliliter <input id='milliliterInput'></label>
-<label>Liter <input id='literInput'></label>
-
-<script type="text/javascript" src="javascript.js"></script>
-
-<!--
-<script>
-
-//Weight functions
-function updateFromOunces() {
-  poundsInput.value = (ouncesInput.value / 16).toFixed(2);
-  kilogramsInput.value = (poundsInput.value / 2.20462).toFixed(2);
-  gramsInput.value = ((poundsInput.value / 2.20462) * 1000).toFixed(2);
-}
-
-function updateFromGrams() {
-  poundsInput.value = ((gramsInput.value / 1000)* 2.20462).toFixed(2);
-  kilogramsInput.value = (gramsInput.value / 1000).toFixed(2);
-  ouncesInput.value = (poundsInput.value * 16).toFixed(2);
-};
-
-function updateFromKilograms() {
-  poundsInput.value = (kilogramsInput.value * 2.20462).toFixed(2);
-  gramsInput.value = (kilogramsInput.value * 1000).toFixed(2);
-  ouncesInput.value = (poundsInput.value * 16).toFixed(2);
-};
-
-function updateFromPounds() {
-  kilogramsInput.value = (poundsInput.value / 2.20462).toFixed(2);
-  gramsInput.value = ((poundsInput.value / 2.20462) * 1000).toFixed(2);
-  ouncesInput.value = (poundsInput.value * 16).toFixed(2);
-};
-
-ouncesInput.oninput = updateFromOunces;
-gramsInput.oninput = updateFromGrams;
-poundsInput.oninput = updateFromPounds;
-kilogramsInput.oninput = updateFromKilograms;
-//End weight functions
-
-//Temperature functions. (/1 after cInput converts to number. .toFixed makes output a string.)
-function updateFromC() {
-  fInput.value = (cInput.value * 1.8 + 32).toFixed(2);
-  kInput.value = (cInput.value / 1 + 273.15);
-}
-
-function updateFromF() {
-  cInput.value = ((fInput.value - 32) / 1.8).toFixed(2);
-  kInput.value = (cInput.value / 1 + 273.15).toFixed(2);
-}
-
-function updateFromK() {
-  cInput.value = (kInput.value - 273.15).toFixed(2);
-  fInput.value = (cInput.value * 1.8 + 32).toFixed(2);
-}
-
-cInput.oninput = updateFromC;
-fInput.oninput = updateFromF;
-kInput.oninput = updateFromK;
-//End Temperature functions
-
-
-//Velocity functions
-function updateFromFeetS () {
-  mileHInput.value = (footSInput.value * 0.681818).toFixed(2);
-  mileSInput.value = (footSInput.value * 0.0001893939394).toFixed(2);
-  kilometerHInput.value = (footSInput.value * 1.09728).toFixed(2);
-  kilometerSInput.value = (footSInput.value * 0.0003048).toFixed(2);
-  meterSInput.value = (footSInput.value * 0.3048).toFixed(2);
-}
-
-function updateFromMileH () {
-  footSInput.value = (mileHInput.value * 1.46666667).toFixed(2);
-  mileSInput.value = (mileHInput.value * 0.0002777777778).toFixed(2);
-  kilometerHInput.value = (mileHInput.value * 1.609344).toFixed(2);
-  kilometerSInput.value = (mileHInput.value * 0.00044704).toFixed(2);
-  meterSInput.value = (mileHInput.value * 0.44704).toFixed(2);
-}
-
-function updateFromMileS () {
-  footSInput.value = (mileSInput.value * 5280).toFixed(2);
-  mileHInput.value = (mileSInput.value * 3600).toFixed(2);
-  kilometerHInput.value = (mileSInput.value * 5793.6384).toFixed(2);
-  kilometerSInput.value = (mileSInput.value * 1.609344).toFixed(2);
-  meterSInput.value = (mileSInput.value * 1609.344).toFixed(2);
-}
-
-function updateFromKilometerH () {
-  footSInput.value = (kilometerHInput.value * 0.91134442).toFixed(2);
-  mileHInput.value = (kilometerHInput.value * 0.6213711923).toFixed(2);
-  mileSInput.value = (kilometerHInput.value * 0.000172603109).toFixed(2);
-  kilometerSInput.value = (kilometerHInput.value * 0.0002777777778).toFixed(2);
-  meterSInput.value = (kilometerHInput.value * 0.2777777778).toFixed(2);
-}
-
-function updateFromKilometerS () {
-  footSInput.value = (kilometerSInput.value * 3280.839895).toFixed(2);
-  mileHInput.value = (kilometerSInput.value * 2236.936292).toFixed(2);
-  mileSInput.value = (kilometerSInput.value * 0.6213711922).toFixed(2);
-  kilometerHInput.value = (kilometerSInput.value * 3600).toFixed(2);
-  meterSInput.value = (kilometerSInput.value * 1000).toFixed(2);
-}
-
-function updateFromMeterS () {
-  footSInput.value = (meterSInput.value * 3.280839895).toFixed(2);
-  mileHInput.value = (meterSInput.value * 2.236936292).toFixed(2);
-  mileSInput.value = (meterSInput.value * 0.0006213711922).toFixed(2);
-  kilometerHInput.value = (meterSInput.value * 3.6).toFixed(2);
-  kilometerSInput.value = (meterSInput.value * .001).toFixed(2);
-}
-
-footSInput.oninput = updateFromFeetS;
-mileHInput.oninput = updateFromMileH;
-mileSInput.oninput = updateFromMileS;
-kilometerHInput.oninput = updateFromKilometerH;
-kilometerSInput.oninput = updateFromKilometerS;
-meterSInput.oninput = updateFromMeterS;
-//End Velocity functions
-
-
-//Volume functions
-function updateFromTSP () {
-  tBSPInput.value = (tSPInput.value * 0.3333333333).toFixed(2);
-  fluidOInput.value = (tSPInput.value * 0.1666666667).toFixed(2);
-  cupInput.value = (tSPInput.value * 0.02083333).toFixed(2);
-  pintInput.value = (tSPInput.value * 0.01041666667).toFixed(2);
-  quartInput.value = (tSPInput.value * 0.005208333333).toFixed(2);
-  gallonInput.value = (tSPInput.value * 0.001302083333).toFixed(2);
-  milliliterInput.value = (tSPInput.value * 4.928921594).toFixed(2);
-  literInput.value = (tSPInput.value * 0.004928921594).toFixed(2);
-}
-
-function updateFromtBSP () {
-  tSPInput.value = (tBSPInput.value * 3).toFixed(2);
-  fluidOInput.value = (tBSPInput.value * .5).toFixed(2);
-  cupInput.value = (tBSPInput.value * .0625).toFixed(2);
-  pintInput.value = (tBSPInput.value * .03125).toFixed(2);
-  quartInput.value = (tBSPInput.value * .015625).toFixed(2);
-  gallonInput.value = (tBSPInput.value * 0.00390625).toFixed(2);
-  milliliterInput.value = (tBSPInput.value * 14.78676478).toFixed(2);
-  literInput.value = (tBSPInput.value * 0.01478676478).toFixed(2);
-}
-
-function updateFromFluidO () {
-  tSPInput.value = (fluidOInput.value * 6).toFixed(2);
-  tBSPInput.value = (fluidOInput.value * 2).toFixed(2);
-  cupInput.value = (fluidOInput.value * .125).toFixed(2);
-  pintInput.value = (fluidOInput.value * .0625).toFixed(2);
-  quartInput.value = (fluidOInput.value * .03125).toFixed(2);
-  gallonInput.value = (fluidOInput.value * 0.007812499999).toFixed(2);
-  milliliterInput.value = (fluidOInput.value * 29.57352956).toFixed(2);
-  literInput.value = (fluidOInput.value * 0.02957352956).toFixed(2);
-}
-
-function updateFromCup () {
-  tSPInput.value = (cupInput.value * 48).toFixed(2);
-  tBSPInput.value = (cupInput.value * 16).toFixed(2);
-  fluidOInput.value = (cupInput.value * 8).toFixed(2);
-  pintInput.value = (cupInput.value * .5).toFixed(2);
-  quartInput.value = (cupInput.value * .25).toFixed(2);
-  gallonInput.value = (cupInput.value * .0625).toFixed(2);
-  milliliterInput.value = (cupInput.value * 236.5882365).toFixed(2);
-  literInput.value = (cupInput.value * 0.2365882365).toFixed(2);
-}
-
-function updateFromPint () {
-  tSPInput.value = (pintInput.value * 96).toFixed(2);
-  tBSPInput.value = (pintInput.value * 32).toFixed(2);
-  fluidOInput.value = (pintInput.value * 16).toFixed(2);
-  cupInput.value = (pintInput.value * 2).toFixed(2);
-  quartInput.value = (pintInput.value * .5).toFixed(2);
-  gallonInput.value = (pintInput.value * .125).toFixed(2);
-  milliliterInput.value = (pintInput.value * 473.176473).toFixed(2);
-  literInput.value = (pintInput.value * 0.473176473).toFixed(2);
-}
-
-function updateFromQuart () {
-  tSPInput.value = (quartInput.value * 192).toFixed(2);
-  tBSPInput.value = (quartInput.value * 64).toFixed(2);
-  fluidOInput.value = (quartInput.value * 32).toFixed(2);
-  cupInput.value = (quartInput.value * 4).toFixed(2);
-  pintInput.value = (quartInput.value * 2).toFixed(2);
-  gallonInput.value = (quartInput.value * .25).toFixed(2);
-  milliliterInput.value = (quartInput.value * 946.352946).toFixed(2);
-  literInput.value = (quartInput.value * 0.946352946).toFixed(2);
-}
-
-function updateFromGallon () {
-  tSPInput.value = (gallonInput.value * 768).toFixed(2);
-  tBSPInput.value = (gallonInput.value * 256).toFixed(2);
-  fluidOInput.value = (gallonInput.value * 128).toFixed(2);
-  cupInput.value = (gallonInput.value * 16).toFixed(2);
-  pintInput.value = (gallonInput.value * 8).toFixed(2);
-  quartInput.value = (gallonInput.value * 4).toFixed(2);
-  milliliterInput.value = (gallonInput.value * 3785.411784).toFixed(2);
-  literInput.value = (gallonInput.value * 3.785411784).toFixed(2);
-}
-
-function updateFromMilliliter () {
-  tSPInput.value = (milliliterInput.value * 0.20288414).toFixed(2);
-  tBSPInput.value = (milliliterInput.value * 0.06762805).toFixed(2);
-  fluidOInput.value = (milliliterInput.value * 0.03381402).toFixed(2);
-  cupInput.value = (milliliterInput.value * 0.00422675).toFixed(2);
-  pintInput.value = (milliliterInput.value * 0.00211338).toFixed(2);
-  quartInput.value = (milliliterInput.value * 0.00105669).toFixed(2);
-  gallonInput.value = (milliliterInput.value * 0.00026417).toFixed(2);
-  literInput.value = (milliliterInput.value * 0.001).toFixed(2);
-}
-
-function updateFromLiter () {
-  tSPInput.value = (literInput.value * 202.8841362).toFixed(2);
-  tBSPInput.value = (literInput.value * 67.6280454).toFixed(2);
-  fluidOInput.value = (literInput.value * 33.8140227).toFixed(2);
-  cupInput.value = (literInput.value * 4.22675284).toFixed(2);
-  pintInput.value = (literInput.value * 2.11337642).toFixed(2);
-  quartInput.value = (literInput.value * 1.05668821).toFixed(2);
-  gallonInput.value = (literInput.value * 0.26417205).toFixed(2);
-  milliliterInput.value = (literInput.value * 1000).toFixed(2);
-}
-
-tSPInput.oninput = updateFromTSP;
-tBSPInput.oninput = updateFromtBSP;
-fluidOInput.oninput = updateFromFluidO;
-cupInput.oninput = updateFromCup;
-pintInput.oninput = updateFromPint;
-quartInput.oninput = updateFromQuart;
-gallonInput.oninput = updateFromGallon;
-milliliterInput.oninput = updateFromMilliliter;
-literInput.oninput = updateFromLiter;
-//End volume functions
-
-</script>
--->
+  <script type="text/javascript" src="javascript.js"></script>
+</body>
+</html>
