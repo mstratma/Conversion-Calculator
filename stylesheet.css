@@ -6,8 +6,8 @@ p {
   text-align: center;
 }
 body {
+  margin: 0 auto;
   font-family: 'open sans';
-  background-color: grey;
   width: 50em;
 }
 
@@ -23,17 +23,26 @@ label {
   cursor: pointer;
   display: block;
   text-align: right;
-  width: 300px;
+  width: 250px;
   margin-bottom: 6px;
+  padding-right: 20px;
 }
 
+.container {
+  border: 1px solid orange;
+  padding: 10px;
+  background-color: lightgrey;
+}
 
 /* Style the tab */
 div.tab {
+    text-align: center;
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #F99801;
+    border: 2px solid orange;
+    background-color: white;
     border-radius: 5px;
+    width: 320px;
+    margin: 0 auto;
 }
 
 /* Style the buttons inside the tab */
@@ -43,6 +52,7 @@ div.tab button {
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
+    width: 320px;
     transition: 0.3s;
     font-size: 1.5em;
     font-family: 'open sans';
@@ -61,7 +71,7 @@ div.tab button.active {
 /* Style the tab content */
 .tabcontent {
     display: none;
-    padding: 6px 12px;
+    text-align: left;
     border: 1px solid #F2580D;
     border-top: none;
     font-size: 1.5em;

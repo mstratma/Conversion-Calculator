@@ -9,29 +9,36 @@
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
+<div class="container">
   <h1>Conversion Calculators</h1>
     <p>Just click a category, input into the field you want, and automatically convert to all of the most common units.</p>
+</div>
+  <div class="container">
   <div class="tab">
     <button class="tablinks" onclick="openCity(event, 'Weight')">Weight</button>
     <div id="Weight" class="tabcontent">
-      <h3>Weight:</h3>
+      <!-- <h3>Weight:</h3> -->
       <label>Pounds <input id="poundsInput"></label>
       <label>Ounces <input id='ouncesInput'></label>
       <label>Kilograms <input id="kilogramsInput"></label>
       <label>Grams <input id='gramsInput'></label>
     </div>
+  </div>
     <br>
+  <div class="tab">
     <button class="tablinks" onclick="openCity(event, 'Temperature')">Temperature</button>
     <div id="Temperature" class="tabcontent">
-      <h3>Temperature:</h3>
+      <!-- <h3>Temperature:</h3> -->
       <label>Celcius <input id='cInput'></label>
       <label>Fahrenheit <input id='fInput'></label>
       <label>Kelvin <input id='kInput'></label>
     </div>
+  </div>
     <br>
+  <div class="tab">
     <button class="tablinks" onclick="openCity(event, 'Velocity')">Velocity</button>
     <div id="Velocity" class="tabcontent">
-      <h3>Velocity:</h3>
+      <!-- <h3>Velocity:</h3> -->
       <label>Feet/Second <input id='footSInput'></label>
       <label>Mile/Hour <input id='mileHInput'></label>
       <label>Mile/Second <input id='mileSInput'></label>
@@ -39,10 +46,12 @@
       <label>Km/Second <input id='kilometerSInput'></label>
       <label>Meter/Second <input id='meterSInput'></label>
     </div>
+  </div>
     <br>
+  <div class="tab">
     <button class="tablinks" onclick="openCity(event, 'Distance/length')">Distance/length</button>
     <div id="Distance/length" class="tabcontent">
-      <h3>Distance/length:</h3>
+      <!-- <h3>Distance/length:</h3> -->
       <label>Inch <input id='inchInput'></label>
       <label>Foot <input id='footInput'></label>
       <label>Yard <input id='yardInput'></label>
@@ -52,10 +61,12 @@
       <label>Meter <input id='meterInput'></label>
       <label>Kilometer <input id='kilometerInput'></label>
     </div>
+  </div>
     <br>
+  <div class="tab">
     <button class="tablinks" onclick="openCity(event, 'Volume')">Volume</button>
     <div id="Volume" class="tabcontent">
-      <h3>Volume:</h3>
+      <!-- <h3>Volume:</h3> -->
       <label>Tsp <input id='tSPInput'></label>
       <label>Tbsp <input id='tBSPInput'></label>
       <label>Fluid Ounce <input id='fluidOInput'></label>
@@ -67,14 +78,13 @@
       <label>Liter <input id='literInput'></label>
     </div>
   </div>
+</div>
   <br>
+<div class="container">
 <p>Great effort has been made to ensure that the conversions in this site are accurate
    but I can not guarantee that all conversions are correct, exact, or that there are
     no errors. If you have encountered an error or would like to request another unit be
     added please click the button below and submit your comment.</p>
-
-
-
 
 <button type='button' onClick='unhideForm()'>Contact</button>
     <div style='display: none;' id='contactForm'>
@@ -89,8 +99,7 @@
       <input type="reset" value="Reset">
       </form>
     </div>
-
-
+  </div>
   <script type="text/javascript" src="javascript.js"></script>
 </body>
 </html>
